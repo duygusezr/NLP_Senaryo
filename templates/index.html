@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çağrı Merkezi Asistanı</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1.7">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <h1><i class="fas fa-headset"></i> Çağrı Merkezi Asistanı</h1>
+            <p>Size nasıl yardımcı olabilirim?</p>
+            <div class="status-indicators">
+                <div class="status-item" id="mock-api-status">
+                    <i class="fas fa-circle"></i>
+                    <span>Mock API</span>
+                </div>
+                <div class="status-item" id="gemini-api-status">
+                    <i class="fas fa-circle"></i>
+                    <span>Gemini API</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="welcome-message">
+                <i class="fas fa-robot"></i> Merhaba! Ben çağrı merkezi asistanınızım. 
+                Size nasıl yardımcı olabilirim? Test müşteri ID'leri: 1001, 1002, 1003, 1004, 1005
+                <br><br>
+                <small>
+                    <i class="fas fa-microphone"></i> "Sesli Konuş" butonuna basarak konuşmaya başlayabilirsiniz<br>
+                    <i class="fas fa-volume-up"></i> "Sesli Yanıt" butonu ile asistanın sesli yanıt vermesini kontrol edebilirsiniz<br>
+                    <i class="fas fa-redo"></i> "Sıfırla" butonu ile konuşma geçmişini temizleyebilirsiniz
+                </small>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <div class="voice-controls">
+                <button class="voice-button" id="voice-button" title="Ses ile konuş">
+                    <i class="fas fa-microphone"></i>
+                    <span>Sesli Konuş</span>
+                </button>
+                <button class="voice-control-button" id="voice-control-button" title="Sesli yanıtı aç/kapat">
+                    <i class="fas fa-volume-up"></i>
+                    <span>Sesli Yanıt</span>
+                </button>
+                <button class="reset-button" id="reset-button" title="Konuşmayı sıfırla">
+                    <i class="fas fa-redo"></i>
+                    <span>Sıfırla</span>
+                </button>
+                <button class="test-button" id="test-voice-button" title="Sesli yanıt test">
+                    <i class="fas fa-play"></i>
+                    <span>Test Ses</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Modülleri -->
+    <script src="/static/js/voice-recognition.js?v=1.7"></script>
+    <script src="/static/js/speech-synthesis.js?v=1.7"></script>
+    <script src="/static/js/api-client.js?v=1.7"></script>
+    <script src="/static/js/chat-interface.js?v=1.7"></script>
+    
+    <script>
+        // Initialize the chat interface when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ChatInterface();
+        });
+    </script>
+</body>
+</html> 

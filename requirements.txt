@@ -1,0 +1,18 @@
+# Web Interface Dependencies
+Flask==2.3.3
+Werkzeug==2.3.7
+FastAPI==0.116.1
+uvicorn==0.35.0
+
+# Voice Agent Dependencies
+requests==2.31.0
+pydantic==2.4.2
+
+# Voice Processing (Optional - for voice features)
+gtts==2.4.0
+# playsound==1.3.0  # Web arayüzünde kullanılmıyor
+# sounddevice==0.4.6  # Web arayüzünde kullanılmıyor
+# vosk==0.3.45  # Web arayüzünde kullanılmıyor
+
+# Development
+python-dotenv==1.0.0 
